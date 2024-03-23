@@ -6,17 +6,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Navbar, Sidebar } from "./components/$composer";
 import { Dashboard } from "./Pages/$composer";
+import { useStateContext } from "./hooks/useStateContext";
 
 const App = () => {
   // For ref only, in future will create Context API
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
       <BrowserRouter>
         {/* setting icon below  */}
         <div className="flex relative dark:bg-main-dark-bg">
-          <div className="fixed right-4 bottom-4" style={{ zIndex: "999" }}>
+          <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
@@ -40,27 +41,28 @@ const App = () => {
         )}
 
         {/* navigation bar */}
+
         <div
           className={
             activeMenu
-              ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full"
-              : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2"
+              ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
+              : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
           }
         >
-          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
             <Navbar />
           </div>
-        </div>
 
-        {/* Routes here  */}
+          {/* Routes here  */}
 
-        <div>
-          <Routes>
-            {/* In future, add Sign In SignUp Routes too  */}
+          <div>
+            <Routes>
+              {/* In future, add Sign In SignUp Routes too  */}
 
-            {/* Dashboard  */}
-            <Route path="/" element={<Dashboard />} />
-          </Routes>
+              {/* Dashboard  */}
+              <Route path="/" element={<Dashboard />} />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </div>

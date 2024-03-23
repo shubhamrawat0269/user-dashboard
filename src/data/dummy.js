@@ -2881,11 +2881,11 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 1, yval: 2 },
-  { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
+  { x: 0, xval: "2005", yval: 20090440 },
+  { x: 1, xval: "2006", yval: 20264080 },
+  { x: 2, xval: "2007", yval: 20434180 },
+  { x: 3, xval: "2008", yval: 21007310 },
+  { x: 4, xval: "2009", yval: 21262640 },
 ];
 
 export const lineCustomSeries = [
@@ -2995,6 +2995,40 @@ export const stackedCustomSeries = [
     type: "StackingColumn",
     background: "red",
   },
+];
+
+export const smithChartdata = [
+  { resistance: 10, reactance: 25 },
+  { resistance: 8, reactance: 6 },
+  { resistance: 6, reactance: 4.5 },
+  { resistance: 4.5, reactance: 2 },
+  { resistance: 3.5, reactance: 1.6 },
+  { resistance: 2.5, reactance: 1.3 },
+  { resistance: 2, reactance: 1.2 },
+  { resistance: 1.5, reactance: 1 },
+  { resistance: 1, reactance: 0.8 },
+  { resistance: 0.5, reactance: 0.4 },
+  { resistance: 0.3, reactance: 0.2 },
+  { resistance: 0, reactance: 0.15 },
+];
+
+export const smithChartDirectives = [
+  { resistance: 20, reactance: -50 },
+  { resistance: 10, reactance: -10 },
+  { resistance: 9, reactance: -4.5 },
+  { resistance: 8, reactance: -3.5 },
+  { resistance: 7, reactance: -2.5 },
+  { resistance: 6, reactance: -1.5 },
+  { resistance: 5, reactance: -1 },
+  { resistance: 4.5, reactance: -0.5 },
+  { resistance: 3.5, reactance: 0 },
+  { resistance: 2.5, reactance: 0.4 },
+  { resistance: 2, reactance: 0.5 },
+  { resistance: 1.5, reactance: 0.5 },
+  { resistance: 1, reactance: 0.4 },
+  { resistance: 0.5, reactance: 0.2 },
+  { resistance: 0.3, reactance: 0.1 },
+  { resistance: 0, reactance: 0.05 },
 ];
 
 export const stackedPrimaryXAxis = {

@@ -3,6 +3,9 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { Navbar, Sidebar } from "./components/$composer";
+import { Dashboard } from "./Pages/$composer";
+
 const App = () => {
   // For ref only, in future will create Context API
   const activeSidebar = false;
@@ -27,10 +30,12 @@ const App = () => {
         {/* siderbar code */}
         {activeSidebar ? (
           <div className="w-72 fixed sidebar dar:bg-secondary-dark-bg bg-white">
-            Sidebar
+            <Sidebar />
           </div>
         ) : (
-          <div className="w-0 dark-bg-secondary-dark-bg">Sidebar</div>
+          <div className="w-0 dark-bg-secondary-dark-bg">
+            <Sidebar />
+          </div>
         )}
 
         {/* navigation bar */}
@@ -42,7 +47,7 @@ const App = () => {
           }
         >
           <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-            Navbar
+            <Navbar />
           </div>
         </div>
 
@@ -53,7 +58,7 @@ const App = () => {
             {/* In future, add Sign In SignUp Routes too  */}
 
             {/* Dashboard  */}
-            <Route path="/" element="User Dashboard" />
+            <Route path="/" element={<Dashboard />} />
           </Routes>
         </div>
       </BrowserRouter>

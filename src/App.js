@@ -1,3 +1,4 @@
+import "./App.css";
 import React from "react";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -8,7 +9,7 @@ import { Dashboard } from "./Pages/$composer";
 
 const App = () => {
   // For ref only, in future will create Context API
-  const activeSidebar = false;
+  const activeMenu = true;
 
   return (
     <div>
@@ -28,12 +29,12 @@ const App = () => {
           </div>
         </div>
         {/* siderbar code */}
-        {activeSidebar ? (
-          <div className="w-72 fixed sidebar dar:bg-secondary-dark-bg bg-white">
+        {activeMenu ? (
+          <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
             <Sidebar />
           </div>
         ) : (
-          <div className="w-0 dark-bg-secondary-dark-bg">
+          <div className="w-0 dark:bg-secondary-dark-bg">
             <Sidebar />
           </div>
         )}
@@ -41,7 +42,7 @@ const App = () => {
         {/* navigation bar */}
         <div
           className={
-            activeSidebar
+            activeMenu
               ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full"
               : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2"
           }

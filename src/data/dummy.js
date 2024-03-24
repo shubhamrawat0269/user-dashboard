@@ -6,8 +6,9 @@ import {
   AiOutlineBarChart,
   AiOutlineStock,
 } from "react-icons/ai";
+
+import { ImProfile } from "react-icons/im";
 import {
-  FiShoppingBag,
   FiEdit,
   FiPieChart,
   FiBarChart,
@@ -514,8 +515,8 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "User",
-        icon: <FiShoppingBag />,
+        name: "Your Profile",
+        icon: <ImProfile />,
       },
     ],
   },
@@ -572,41 +573,45 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />,
-    amount: "39,354",
+    amount: "18",
     percentage: "-4%",
-    title: "Customers",
+    title: "Earned Leaves",
     iconColor: "#03C9D7",
     iconBg: "#E5FAFB",
     pcColor: "red-600",
   },
   {
     icon: <BsBoxSeam />,
-    amount: "4,396",
+    amount: "4",
     percentage: "+23%",
-    title: "Products",
+    title: "Sick Leaves",
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
     pcColor: "green-600",
   },
   {
     icon: <FiBarChart />,
-    amount: "423,39",
-    percentage: "+38%",
-    title: "Sales",
+    amount: "12",
+    percentage: "+18%",
+    title: "Casual leaves",
     iconColor: "rgb(228, 106, 118)",
     iconBg: "rgb(255, 244, 229)",
 
     pcColor: "green-600",
   },
-  {
-    icon: <HiOutlineRefresh />,
-    amount: "39,354",
-    percentage: "-12%",
-    title: "Refunds",
-    iconColor: "rgb(0, 194, 146)",
-    iconBg: "rgb(235, 250, 242)",
-    pcColor: "red-600",
-  },
+];
+
+export const pieData = [
+  { x: "Jan", y: 3, text: "Jan: 3" },
+  { x: "Feb", y: 3.5, text: "Feb: 3.5" },
+  { x: "Mar", y: 7, text: "Mar: 7" },
+  { x: "Apr", y: 13.5, text: "Apr: 13.5" },
+  { x: "May", y: 19, text: "May: 19" },
+  { x: "Jun", y: 23.5, text: "Jun: 23.5" },
+  { x: "Jul", y: 26, text: "Jul: 26" },
+  { x: "Aug", y: 25, text: "Aug: 25" },
+  { x: "Sep", y: 21, text: "Sep: 21" },
+  { x: "Oct", y: 15, text: "Oct: 15" },
 ];
 
 export const recentTransactions = [
@@ -2881,11 +2886,10 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 0, xval: "2005", yval: 20090440 },
-  { x: 1, xval: "2006", yval: 20264080 },
-  { x: 2, xval: "2007", yval: 20434180 },
-  { x: 3, xval: "2008", yval: 21007310 },
-  { x: 4, xval: "2009", yval: 21262640 },
+  { x: 0, xval: "2005", yval: 20 },
+  { x: 1, xval: "2006", yval: 15 },
+  { x: 2, xval: "2007", yval: 5 },
+  { x: 3, xval: "2008", yval: 20 },
 ];
 
 export const lineCustomSeries = [
@@ -2982,7 +2986,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[0],
     xName: "x",
     yName: "y",
-    name: "Budget",
+    name: "Working Time",
     type: "StackingColumn",
     background: "blue",
   },
@@ -2991,7 +2995,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[1],
     xName: "x",
     yName: "y",
-    name: "Expense",
+    name: "Idle Time",
     type: "StackingColumn",
     background: "red",
   },

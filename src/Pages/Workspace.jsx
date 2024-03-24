@@ -47,9 +47,7 @@ const Workspace = () => {
         <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
           <Navbar />
         </div>
-
-        {/* Routes here  */}
-
+        
         <div>
           <Dashboard />
         </div>

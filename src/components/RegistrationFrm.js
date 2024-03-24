@@ -1,28 +1,27 @@
 import { Link } from "react-router-dom";
-// import { useUserContext } from "../../hooks/useUserContext";
+import { useStateContext } from "../hooks/useStateContext";
 
 const RegistrationFrm = () => {
-  // const { registerUser, loading } = useUserContext();
+  const { registerUser, loading } = useStateContext();
 
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-  //   const formData = new FormData(e.target);
-  //   const email = formData.get("email");
-  //   const name = formData.get("name");
-  //   const password = formData.get("password");
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const name = formData.get("name");
+    const password = formData.get("password");
 
-  //   // console.log({ email, name, password });
-  //   if (email && name && password) registerUser(email, name, password);
-  // };
-
+    // console.log({ email, name, password });
+    if (email && name && password) registerUser(email, name, password);
+  };
   return (
     <div className="primary-bg w-screen h-screen flex justify-center items-center ">
       <div className="signup-container text-center">
         <h1 className="text-6xl leading-snug text-zinc-300">
           Sign Up to <span className="block">BULLETBOARD</span>
         </h1>
-        <form onSubmit={() => {}} className="flex flex-col gap-10 form-ctrl">
+        <form onSubmit={onSubmit} className="flex flex-col gap-10 form-ctrl">
           <label htmlFor="email" className="mt-5">
             <input
               type="text"
@@ -51,7 +50,7 @@ const RegistrationFrm = () => {
             />
           </label>
           <button type="submit" className="p-2 w-2/5 m-auto bg-yellow-300">
-            Register
+            {loading ? "Loading..." : "Register"}
           </button>
           <Link to="/" className="btn">
             Already have an account?

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChatLeft } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { AiOutlineLogout } from "react-icons/ai";
 import { RiNotification3Line } from "react-icons/ri";
 import avatar from "../data/avatar.jpg";
 import { useStateContext } from "../hooks/useStateContext";
@@ -29,6 +29,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
 };
 
 const Navbar = () => {
+  // const navigate = useNavigate();
   const {
     activeMenu,
     setActiveMenu,
@@ -36,6 +37,8 @@ const Navbar = () => {
     handleClick,
     screenSize,
     setScreenSize,
+    user,
+    logoutUser,
   } = useStateContext();
 
   useEffect(() => {
@@ -44,6 +47,12 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     navigate("/");
+  //   }
+  // }, [user]);
 
   useEffect(() => {
     if (screenSize <= 900) setActiveMenu(false);
@@ -83,15 +92,24 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
-            <img className="rounded-full w-8 h-8" src={avatar} alt="myPhoto" />
+            <div className="rounded-full w-8 h-8 bg-blue-500 flex items-center justify-center text-white">
+              {user?.displayName[0]}
+            </div>
             <p>
-              <span className="text-gray-400 text-14">Hi, </span>{" "}
+              <span className="text-gray-400 text-14">Hi, </span>
               <span className="text-gray-400 font-bold ml-1 text-14">
-                Shubham
+                {user?.displayName}
               </span>
             </p>
           </div>
         </TooltipComponent>
+
+        <NavButton
+          title="Logout"
+          customFunc={logoutUser}
+          color="blue"
+          icon={<AiOutlineLogout />}
+        />
 
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
